@@ -6,12 +6,13 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { TemplateModule } from './template/template.module';
 
 //import { FingerprintAIO } from '@ionic-native/fingerprint-aio/ngx';
 import { IonicStorageModule } from '@ionic/storage-angular';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { Modulo01Module } from './modulo01/modulo01.module';
+import { Modulo03Module } from './modulo03/modulo03.module';
+import { Modulo02Module } from './modulo02/modulo02.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,12 +21,14 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    TemplateModule,
     IonicStorageModule.forRoot(),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    Modulo01Module,
+    Modulo02Module,
+    Modulo03Module
   ],
   providers: [
-    //{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     //FingerprintAIO
   ],
   bootstrap: [AppComponent],
